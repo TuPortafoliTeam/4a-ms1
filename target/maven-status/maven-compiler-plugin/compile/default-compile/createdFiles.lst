@@ -1,4 +1,11 @@
-com\miportafolio\ms1\controllers\RolController.class
+com\miportafolio\ms1\controllers\TipoEntidadController.class
+com\miportafolio\ms1\repositories\TipoEntidadRepository.class
 com\miportafolio\ms1\Ms1Application.class
+com\miportafolio\ms1\exceptions\TipoEntidadNotFoundAdvice.class
 com\miportafolio\ms1\models\Rol.class
 com\miportafolio\ms1\repositories\RolRepository.class
+com\miportafolio\ms1\models\TipoEntidad.class
+com\miportafolio\ms1\controllers\RolController.class
+com\miportafolio\ms1\exceptions\RolNotFoundAdvice.class
+com\miportafolio\ms1\exceptions\RolNotFoundException.class
+com\miportafolio\ms1\exceptions\TipoEntidadNotFoundException.class
