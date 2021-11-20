@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface RolRepository extends JpaRepository<Rol,String> {
-    List<Rol> findByIdRol(String IdRol);
+public interface RolRepository extends JpaRepository<Rol, Long> {
+    List<Rol> findByIdRol(Long IdRol);
 }

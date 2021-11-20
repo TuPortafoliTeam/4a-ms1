@@ -3,22 +3,21 @@ package com.miportafolio.ms1.models;
 import javax.persistence.Id;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-
 
 @Entity
 public class TipoEntidad {
     @Id
-    @GeneratedValue
-    private long idTipoEntidad;
+    private Long idTipoEntidad;
     private String nombre;
 
-    public TipoEntidad(long idTipoEntidad, String nombre) {
-        this.idTipoEntidad = idTipoEntidad;
+    public TipoEntidad(String nombre) {
         this.nombre = nombre;
     }
 
-    public long getIdTipoEntidad() {
+    public TipoEntidad() {
+    }
+
+    public Long getIdTipoEntidad() {
         return idTipoEntidad;
     }
 
