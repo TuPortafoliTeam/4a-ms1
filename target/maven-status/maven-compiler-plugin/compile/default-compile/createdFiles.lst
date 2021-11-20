@@ -1,0 +1,4 @@
+com\miportafolio\ms1\controllers\RolController.class
+com\miportafolio\ms1\Ms1Application.class
+com\miportafolio\ms1\models\Rol.class
+com\miportafolio\ms1\repositories\RolRepository.class
