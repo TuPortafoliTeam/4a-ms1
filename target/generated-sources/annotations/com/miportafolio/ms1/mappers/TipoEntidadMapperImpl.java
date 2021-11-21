@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-11-21T08:18:04-0800",
+    date = "2021-11-21T17:26:55-0500",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 17.0.1 (Oracle Corporation)"
 )
 @Component
@@ -46,7 +46,7 @@ public class TipoEntidadMapperImpl implements TipoEntidadMapper {
     }
 
     @Override
-    public List<TipoEntidad> listTipoEntidadDTOTolistTipoEntidad(List<TipoEntidadDTO> tipoEntidadDTOs) {
+    public List<TipoEntidad> listTipoEntidadDTOToListTipoEntidad(List<TipoEntidadDTO> tipoEntidadDTOs) {
         if ( tipoEntidadDTOs == null ) {
             return null;
         }
@@ -60,7 +60,7 @@ public class TipoEntidadMapperImpl implements TipoEntidadMapper {
     }
 
     @Override
-    public List<TipoEntidadDTO> listTipoEntidadTolistTipoEntidadDTO(List<TipoEntidad> TipoEntidads) {
+    public List<TipoEntidadDTO> listTipoEntidadToListTipoEntidadDTO(List<TipoEntidad> TipoEntidads) {
         if ( TipoEntidads == null ) {
             return null;
         }

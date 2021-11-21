@@ -1,14 +1,17 @@
 com\miportafolio\ms1\controllers\TipoEntidadController.class
+com\miportafolio\ms1\exceptions\RolFuncionalidadNotFoundAdvice.class
 com\miportafolio\ms1\security\UsuarioDetailsServiceImpl.class
 com\miportafolio\ms1\models\TipoEntidad.class
 com\miportafolio\ms1\security\Constants.class
 com\miportafolio\ms1\security\JWTAuthorizationFilter.class
 com\miportafolio\ms1\exceptions\RolNotFoundException.class
 com\miportafolio\ms1\mappers\TipoEntidadMapperImpl.class
+com\miportafolio\ms1\controllers\RolFuncionalidadController.class
 com\miportafolio\ms1\exceptions\TipoEntidadNotFoundException.class
 com\miportafolio\ms1\security\JWTAuthenticationFilter.class
 com\miportafolio\ms1\Ms1Application.class
 com\miportafolio\ms1\models\Rol.class
+com\miportafolio\ms1\models\RolFuncionalidad.class
 com\miportafolio\ms1\models\Usuario.class
 com\miportafolio\ms1\dto\RolDTO.class
 com\miportafolio\ms1\controllers\RolController.class
@@ -16,6 +19,8 @@ com\miportafolio\ms1\exceptions\RolNotFoundAdvice.class
 com\miportafolio\ms1\mappers\UsuarioMapper.class
 com\miportafolio\ms1\controllers\UsuarioController.class
 com\miportafolio\ms1\exceptions\TipoEntidadNotFoundAdvice.class
+com\miportafolio\ms1\mappers\RolFuncionalidadMapper.class
+com\miportafolio\ms1\dto\RolFuncionalidadDTO.class
 com\miportafolio\ms1\dto\ResponseDTO.class
 com\miportafolio\ms1\dto\TipoEntidadDTO.class
 com\miportafolio\ms1\mappers\UsuarioMapperImpl.class
@@ -25,5 +30,8 @@ com\miportafolio\ms1\mappers\RolMapperImpl.class
 com\miportafolio\ms1\mappers\RolMapper.class
 com\miportafolio\ms1\mappers\TipoEntidadMapper.class
 com\miportafolio\ms1\repositories\RolRepository.class
+com\miportafolio\ms1\mappers\RolFuncionalidadMapperImpl.class
+com\miportafolio\ms1\exceptions\RolFuncionalidadNotFoundException.class
 com\miportafolio\ms1\security\WebSecurity.class
 com\miportafolio\ms1\dto\UsuarioDTO.class
+com\miportafolio\ms1\repositories\RolFuncionalidadRepository.class
