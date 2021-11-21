@@ -10,10 +10,13 @@ import java.util.List;
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.FIELD)
 public interface RolMapper {
-    @Mapping(source = "idTipoEntidad", target = "tipoEntidad.idTipoEntidad")
-    public Rol RolDTOToRol (RolDTO rolDTO);
-    @Mapping(source = "tipoEntidad.idTipoEntidad", target = "idTipoEntidad")
-    public RolDTO RolToRolDto (Rol rol);
-    public List<Rol> listRolDTOTolistRol (List<RolDTO> rolDTOs);
-    public List<RolDTO> listRolTolistRolDto (List<Rol> rol);
+    @Mapping(source = "tipoEntidad.idTipoEntidad", target = "tipoEntidad")
+    public RolDTO rolToRolDto (Rol Rol);
+
+    @Mapping(source = "tipoEntidad", target = "tipoEntidad.idTipoEntidad")
+    public Rol rolDTOToRol (RolDTO RolDTO);
+
+    public List<RolDTO> listRolToListRolDTO (List<Rol> Roles);
+
+    public List<Rol> listRolDTOToListRol (List<RolDTO> RolDTOs);
 }

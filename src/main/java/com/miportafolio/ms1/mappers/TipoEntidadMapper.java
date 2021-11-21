@@ -11,8 +11,8 @@ import java.util.List;
 public interface TipoEntidadMapper {
     public TipoEntidad tipoEntidadDTOToTipoEntidad (TipoEntidadDTO tipoEntidadDTO);
     public TipoEntidadDTO tipoEntidadToTipoEntidadDTO(TipoEntidad tipoEntidad);
-    public List<TipoEntidad> listTipoEntidadDTOTolistTipoEntidad (List<TipoEntidadDTO> tipoEntidadDTOs);
-    public List<TipoEntidadDTO> listTipoEntidadTolistTipoEntidadDTO(List<TipoEntidad> TipoEntidads);
+    public List<TipoEntidad> listTipoEntidadDTOToListTipoEntidad (List<TipoEntidadDTO> tipoEntidadDTOs);
+    public List<TipoEntidadDTO> listTipoEntidadToListTipoEntidadDTO(List<TipoEntidad> TipoEntidads);
 }
 
 
