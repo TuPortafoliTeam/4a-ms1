@@ -1,7 +1,5 @@
 package com.miportafolio.ms1.dto;
 
-import com.miportafolio.ms1.models.TipoEntidad;
-
 public class RolDTO {
     private Long idRol;
     private String nombre;
