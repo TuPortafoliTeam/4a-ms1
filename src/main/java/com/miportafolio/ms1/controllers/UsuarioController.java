@@ -9,6 +9,8 @@ import com.miportafolio.ms1.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,4 +45,11 @@ public class UsuarioController {
         db.setContrasena(null);
         return ResponseEntity.ok().body(new ResponseDTO(true, null, usuarioMapper.usuarioToUsuarioDTO(db)));
     }
+
+    @GetMapping("{idUsuario}")
+    public ResponseEntity<?> getMethodName(@PathVariable Long idUsuario) {
+        return ResponseEntity.ok().body(
+                new ResponseDTO(true, null, usuarioMapper.usuarioToUsuarioDTO(usuarioRepository.getById(idUsuario))));
+    }
+
 }
