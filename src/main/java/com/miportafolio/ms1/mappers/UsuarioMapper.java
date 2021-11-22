@@ -21,3 +21,4 @@ public interface UsuarioMapper {
 
     public List<Usuario> listUsuarioDTOToListUsuario(List<UsuarioDTO> UsuarioDTOs);
 }
+
