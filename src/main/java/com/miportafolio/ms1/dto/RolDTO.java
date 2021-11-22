@@ -1,11 +1,9 @@
 package com.miportafolio.ms1.dto;
 
-import com.miportafolio.ms1.models.TipoEntidad;
-
 public class RolDTO {
     private Long idRol;
     private String nombre;
-    private Long tipoEntidad;
+    private Long idTipoEntidad;
 
     public RolDTO() {
     }
@@ -23,8 +21,8 @@ public class RolDTO {
         return nombre;
     }
 
-    public Long getTipoEntidad() {
-        return tipoEntidad;
+    public Long getIdTipoEntidad() {
+        return idTipoEntidad;
     }
 
     public void setIdRol(Long idRol) {
@@ -35,7 +33,7 @@ public class RolDTO {
         this.nombre = nombre;
     }
 
-    public void setTipoEntidad(Long tipoEntidad) {
-        this.tipoEntidad = tipoEntidad;
+    public void setIdTipoEntidad(Long tipoEntidad) {
+        this.idTipoEntidad = tipoEntidad;
     }
 }
