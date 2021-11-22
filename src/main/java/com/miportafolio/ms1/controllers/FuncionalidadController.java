@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
-public class FuncionalidadController{
+public class FuncionalidadController {
     @Autowired
     private FuncionalidadRepository funcionalidadRepository;
 
-    public FuncionalidadController(FuncionalidadRepository funcionalidadRepository){
+    public FuncionalidadController(FuncionalidadRepository funcionalidadRepository) {
         this.funcionalidadRepository = funcionalidadRepository;
     }
 
     @GetMapping("funcionalidad/{id}")
-    public Optional<Funcionalidad> getRol(@PathVariable Long IdFuncionalidad) {
+    public Optional<Funcionalidad> getFuncionalidad(@PathVariable Long IdFuncionalidad) {
         return funcionalidadRepository.findById(IdFuncionalidad);
     }
 
     @PostMapping("/funcionalidad")
-    public Funcionalidad newFuncionalidad(@RequestBody Funcionalidad funcionalidad){
+    public Funcionalidad newFuncionalidad(@RequestBody Funcionalidad funcionalidad) {
         return funcionalidadRepository.save(funcionalidad);
     }
 }

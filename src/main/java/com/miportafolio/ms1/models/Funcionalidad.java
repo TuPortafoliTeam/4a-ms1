@@ -1,21 +1,22 @@
 package com.miportafolio.ms1.models;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
+@Table(name = "funcionalidad")
 public class Funcionalidad {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
     private long idFuncionalidad;
     private String nombre;
-    private String Url;
+    private String url;
 
     public long getIdFuncionalidad() {
         return idFuncionalidad;
@@ -34,11 +35,11 @@ public class Funcionalidad {
     }
 
     public String getUrl() {
-        return Url;
+        return url;
     }
 
     public void setUrl(String url) {
-        Url = url;
+        this.url = url;
     }
 
     public Funcionalidad() {

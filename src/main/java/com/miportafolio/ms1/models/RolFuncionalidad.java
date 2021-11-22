@@ -1,8 +1,11 @@
 package com.miportafolio.ms1.models;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -12,13 +15,17 @@ public class RolFuncionalidad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private Long idRolFuncionalidad;
-    private Long idRol;
-    private Long idFuncionalidad;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_rol", nullable = false)
+    private Rol rol;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_funcionalidad", nullable = false)
+    private Funcionalidad funcionalidad;
 
-    public RolFuncionalidad(Long idRolFuncionalidad, Long idRol, Long idFuncionalidad){
+    public RolFuncionalidad(Long idRolFuncionalidad, Rol rol, Funcionalidad funcionalidad) {
         this.idRolFuncionalidad = idRolFuncionalidad;
-        this.idRol = idRol;
-        this.idFuncionalidad = idFuncionalidad;
+        this.rol = rol;
+        this.funcionalidad = funcionalidad;
     }
 
     public RolFuncionalidad() {
@@ -32,19 +39,19 @@ public class RolFuncionalidad {
         this.idRolFuncionalidad = idRolFuncionalidad;
     }
 
-    public Long getIdRol() {
-        return idRol;
+    public Rol getRol() {
+        return this.rol;
     }
 
-    public void setIdRol(Long idRol) {
-        this.idRol = idRol;
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
-    public Long getIdFuncionalidad() {
-        return idFuncionalidad;
+    public Funcionalidad getFuncionalidad() {
+        return this.funcionalidad;
     }
 
-    public void setIdFuncionalidad(Long idFuncionalidad) {
-        this.idFuncionalidad = idFuncionalidad;
+    public void setFuncionalidad(Funcionalidad funcionalidad) {
+        this.funcionalidad = funcionalidad;
     }
 }

@@ -12,7 +12,7 @@ public class FuncionalidadNotFoundAdvice {
     @ResponseBody
     @ExceptionHandler(FuncionalidadNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String EntityNotFoundAdvice(FuncionalidadNotFoundException ex){
+    String EntityNotFoundAdvice(FuncionalidadNotFoundException ex) {
         return ex.getMessage();
     }
 }

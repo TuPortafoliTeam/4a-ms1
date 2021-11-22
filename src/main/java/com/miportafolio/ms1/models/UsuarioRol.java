@@ -1,19 +1,19 @@
 package com.miportafolio.ms1.models;
 
-import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "UsuarioRol")
+@Table(name = "usuario_rol")
 public class UsuarioRol {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer IdUsuarioRol;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
+    private Long idUsuarioRol;
     @ManyToOne
-    @JoinColumn(name = "IdUsuario")
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
     @ManyToOne
-    @JoinColumn(name = "IdRol")
+    @JoinColumn(name = "id_rol")
     private Rol rol;
 
     public UsuarioRol(Usuario usuario, Rol rol) {
@@ -25,12 +25,12 @@ public class UsuarioRol {
         super();
     }
 
-    public Integer getIdUsuarioRol() {
-        return IdUsuarioRol;
+    public Long getIdUsuarioRol() {
+        return idUsuarioRol;
     }
 
-    public void setIdUsuarioRol(Integer idUsuarioRol) {
-        IdUsuarioRol = idUsuarioRol;
+    public void setIdUsuarioRol(Long idUsuarioRol) {
+        this.idUsuarioRol = idUsuarioRol;
     }
 
     public Usuario getUsuario() {

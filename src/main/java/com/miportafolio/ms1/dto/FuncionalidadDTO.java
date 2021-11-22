@@ -1,39 +1,39 @@
 package com.miportafolio.ms1.dto;
 
-import com.miportafolio.ms1.models.TipoEntidad;
-
-public class FuncionalidadDTO{
-
+public class FuncionalidadDTO {
+    private Long idFuncionalidad;
     private String nombre;
     private String Url;
 
-    public FuncionalidadDTO(){
+    public FuncionalidadDTO() {
     }
 
-    FuncionalidadDTO(String nombre){
+    FuncionalidadDTO(Long idFuncionalidad) {
         this.idFuncionalidad = idFuncionalidad;
-    }
-
-    FuncionalidadDTO(String Url){
-        this.idFuncionalidad = idFuncionalidad;
-    }
-
-    public String getnombre() {
-        return nombre;
-    }
-
-    public void setnombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String Url() {
-        return Url;
     }
 
     public void setUrl(String Url) {
         this.Url = Url;
     }
 
+    public Long getIdFuncionalidad() {
+        return this.idFuncionalidad;
+    }
 
+    public void setIdFuncionalidad(Long idFuncionalidad) {
+        this.idFuncionalidad = idFuncionalidad;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getUrl() {
+        return this.Url;
+    }
 
 }
