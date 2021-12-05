@@ -5,6 +5,8 @@ public class Constants {
 
     public static final String LOGIN_URL = "/login";
     public static final String REGISTRO_URL = "/usuario/registro";
+    public static final String UPDATE_URL = "/usuario/actualizar";
+    public static final String DETALLE_URL = "/usuario/detalle/*";
     public static final String HEADER_AUTHORIZACION_KEY = "Authorization";
     public static final String TOKEN_BEARER_PREFIX = "Bearer ";
 

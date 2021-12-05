@@ -61,7 +61,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         user.setContrasena(null);
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter()
-                .write(mapper.writeValueAsString(new ResponseDTO(true, null, usuarioMapper.usuarioToUsuarioDTO(user))));
+                .write(mapper.writeValueAsString(new ResponseDTO(true, null, token)));
         response.setContentType("application/json");
         response.addHeader(Constants.HEADER_AUTHORIZACION_KEY, Constants.TOKEN_BEARER_PREFIX + " " + token);
     }

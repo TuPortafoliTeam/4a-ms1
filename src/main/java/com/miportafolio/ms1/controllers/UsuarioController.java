@@ -47,7 +47,7 @@ public class UsuarioController {
         return ResponseEntity.ok().body(new ResponseDTO(true, null, usuarioMapper.usuarioToUsuarioDTO(db)));
     }
 
-    @GetMapping("{idUsuario}")
+    @GetMapping("detalle/{idUsuario}")
     public ResponseEntity<?> getMethodName(@PathVariable Long idUsuario) {
         return ResponseEntity.ok().body(
                 new ResponseDTO(true, null, usuarioMapper.usuarioToUsuarioDTO(usuarioRepository.getById(idUsuario))));

@@ -37,7 +37,10 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().cors().and()
                 .csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, Constants.LOGIN_URL, Constants.REGISTRO_URL).permitAll().anyRequest()
+                .antMatchers(HttpMethod.POST, Constants.LOGIN_URL, Constants.REGISTRO_URL, Constants.UPDATE_URL)
+                .permitAll()
+                .antMatchers(HttpMethod.GET, Constants.DETALLE_URL).permitAll()
+                .anyRequest()
                 .authenticated().and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager(), usuarioRepository, usuarioMapper))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()));
