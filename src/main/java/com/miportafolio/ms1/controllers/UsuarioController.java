@@ -8,6 +8,7 @@ import com.miportafolio.ms1.repositories.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,6 +51,14 @@ public class UsuarioController {
     public ResponseEntity<?> getMethodName(@PathVariable Long idUsuario) {
         return ResponseEntity.ok().body(
                 new ResponseDTO(true, null, usuarioMapper.usuarioToUsuarioDTO(usuarioRepository.getById(idUsuario))));
+    }
+
+    @GetMapping("/validarToken")
+    public ResponseEntity<?> validarToken() {
+        String username = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Long id = usuarioRepository.findByCorreo(username).getIdUsuario();
+        return ResponseEntity.ok().body(
+                new ResponseDTO(true, null, id));
     }
 
 }
