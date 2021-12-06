@@ -31,8 +31,8 @@ public class UsuarioController {
     @PostMapping("registro")
     public ResponseEntity<?> saveUser(@RequestBody UsuarioDTO user) {
         user.setContrasena(bCryptPasswordEncoder.encode(user.getContrasena()));
-        usuarioRepository.save(usuarioMapper.usuarioDTOToUsuario(user));
-        return ResponseEntity.ok().body(new ResponseDTO(true, null));
+        Usuario userDB = usuarioRepository.save(usuarioMapper.usuarioDTOToUsuario(user));
+        return ResponseEntity.ok().body(new ResponseDTO(true, null, userDB.getIdUsuario()));
     }
 
     @PutMapping("actualizar")
