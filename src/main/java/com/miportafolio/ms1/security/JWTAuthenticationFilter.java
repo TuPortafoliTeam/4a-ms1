@@ -3,6 +3,8 @@ package com.miportafolio.ms1.security;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -28,13 +30,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
     private UsuarioRepository usuarioRepository;
-    private UsuarioMapper usuarioMapper;
 
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager, UsuarioRepository usuarioRepository,
             UsuarioMapper usuarioMapper) {
         this.authenticationManager = authenticationManager;
         this.usuarioRepository = usuarioRepository;
-        this.usuarioMapper = usuarioMapper;
     }
 
     @Override
@@ -60,8 +60,11 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         Usuario user = usuarioRepository.findByCorreo(((User) auth.getPrincipal()).getUsername());
         user.setContrasena(null);
         ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> ans = new TreeMap<>();
+        ans.put("token", token);
+        ans.put("id", user.getIdUsuario());
         response.getWriter()
-                .write(mapper.writeValueAsString(new ResponseDTO(true, null, token)));
+                .write(mapper.writeValueAsString(new ResponseDTO(true, null, ans)));
         response.setContentType("application/json");
         response.addHeader(Constants.HEADER_AUTHORIZACION_KEY, Constants.TOKEN_BEARER_PREFIX + " " + token);
     }
